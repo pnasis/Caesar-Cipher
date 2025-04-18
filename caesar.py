@@ -1,3 +1,5 @@
+from pyfiglet import Figlet
+
 def caesar_encrypt(text, shift):
     result = ""
     for char in text:
@@ -13,12 +15,13 @@ def caesar_decrypt(text, shift):
 
 def caesar_bruteforce(text):
     print("\nBrute-force results (trying all possible shifts):")
-    for shift in range(1, 26):  # Skip shift=0 as it's the same as original
+    for shift in range(1, 26):
         decrypted = caesar_decrypt(text, shift)
         print(f"Shift {shift:2}: {decrypted}")
 
 def main():
-    print("Caesar Cipher Tool")
+    print(Figlet(font='slant').renderText("Caesar Cipher Tool"))
+    print("\nCreated by: pnasis\nVersion: v1.0\n")
     print("1. Encrypt")
     print("2. Decrypt")
     choice = input("Choose an option (1 or 2): ")
